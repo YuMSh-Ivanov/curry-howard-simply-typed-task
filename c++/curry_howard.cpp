@@ -18,7 +18,8 @@ struct curry_howard
 {
     std::function<std::function<A(B)>(A)> c1 = ???;
 
-    std::function<std::variant<A, B>(std::pair<A, B>)> c2 = ???;
+    std::function<std::variant<A, B>(std::pair<A, B>)> c2 = [](std::pair<A, B> p)
+    { return std::variant<A, B>(std::in_place_index<0>, p.first); };
 
     std::function<std::variant<std::pair<A, B>, std::pair<A, C>>(std::pair<A, std::variant<B, C>>)> c3 = ???;
 

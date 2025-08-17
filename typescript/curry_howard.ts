@@ -38,7 +38,7 @@ function right<A, B>(e : Either<A, B>) : B {
 
 class CurryHoward<A, B, C> {
     public c1 : (_ : A) => (_ : B) => A = ???;
-    public c2 : (_ : [A, B]) => Either<A, B> = ???;
+    public c2 : (_ : [A, B]) => Either<A, B> = p => makeLeft(p[0]);
     public c3 : (_ : [A, Either<B, C>]) => Either<[A, B], [A, C]> = ???;
     public c4 : (_ : [[(_ : A) => C, (_ : B) => C], Either<A, B>]) => C = ???;
     public c5 : (_ : (_ : Either<B, C>) => A) => [(_ : B) => A, (_ : C) => A] = ???;

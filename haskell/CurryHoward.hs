@@ -5,7 +5,7 @@ c1 :: a -> b -> a
 c1 ???
 
 c2 :: (a, b) -> Either a b
-c2 ???
+c2 (a, _) = Left a
 
 c3 :: (a, Either b c) -> Either (a, b) (a, c)
 c3 ???
